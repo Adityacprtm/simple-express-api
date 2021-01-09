@@ -4,10 +4,10 @@ const generateToken = (data) => {
   return new Promise((resolve, reject) => {
     jwt.sign(
       data,
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || "secret",
       {
-        expiresIn: process.env.JWT_EXPIRATION,
-        algorithm: process.env.JWT_ALGORITHM,
+        expiresIn: process.env.JWT_EXPIRATION || 60000,
+        algorithm: process.env.JWT_ALGORITHM || "HS512",
       },
       (error, token) => {
         if (error) {

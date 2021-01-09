@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const JWT_SECRET = process.env.JWT_SECRET || "secret";
 
 function checkTokenSetUser(req, res, next) {
   // Get token from cookies
@@ -6,7 +7,7 @@ function checkTokenSetUser(req, res, next) {
   try {
     if (token) {
       // verify token
-      jwt.verify(token, process.env.JWT_SECRET, (error, decoded) => {
+      jwt.verify(token, JWT_SECRET, (error, decoded) => {
         if (error) {
           res.statusCode = 400;
           next(new Error(error));

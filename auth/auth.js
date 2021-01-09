@@ -42,7 +42,7 @@ router.post("/signup", async (req, res, next) => {
           delete insertUser.password;
           const token = await generateToken(insertUser);
           if (token) {
-            const expiration = process.env.COOKIE_EXPIRATION;
+            const expiration = process.env.COOKIE_EXPIRATION || 60000;
             res
               .cookie("token", token, {
                 expires: new Date(Date.now() + Number(expiration)),
@@ -85,7 +85,7 @@ router.post("/login", async function (req, res, next) {
         delete user._id;
         const token = await generateToken(user);
         if (token) {
-          const expiration = process.env.COOKIE_EXPIRATION;
+          const expiration = process.env.COOKIE_EXPIRATION || 60000;
           res
             .cookie("token", token, {
               expires: new Date(Date.now() + Number(expiration)),

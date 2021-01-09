@@ -27,7 +27,7 @@ module.exports = (app) => {
     })
   );
   // setup the logger
-  const prod = process.env.PRODUCTION;
+  const prod = process.env.PRODUCTION || false;
   app.use(morgan(prod ? "dev" : "common"));
   app.use(
     morgan("combined", {
