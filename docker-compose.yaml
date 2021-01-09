@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - 27017:27017
+    networks:
+      - network_1
+  express:
+    container_name: express-app
+    image: adityacprtm/simple-express-node:latest
+    ports:
+      - 3000:3000
+    environment:
+      - PRODUCTION=true
+      - MONGO_URI=mongo:27017
+    depends_on:
+      - mongo
+    networks:
+      - network_1
+
+networks:
+  network_1:
+    name: network_1
