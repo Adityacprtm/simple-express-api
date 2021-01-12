@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
+const process = require("process");
 const users = require("../db/users");
 const generateToken = require("./generateToken");
 const { signupValidation, loginValidation } = require("../db/validation");
 
 // Auth Root Router
-router.get("/", (req, res, next) => {
+router.get("/", (req, res) => {
   res.json({
     message: "Welcome to Auth 🚀",
   });

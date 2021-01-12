@@ -9,7 +9,7 @@ router.get("/", (req, res, next) => {
   }
 });
 
-router.get("/:id", (req, res, next) => {
+router.get("/:id", (req, res) => {
   if (req.params.id == req.user.username) {
     res.json({
       message: `🎉 You passed the auth, Well Played ${req.user.username}`,

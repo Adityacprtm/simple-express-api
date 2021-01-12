@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const process = require("process");
 const JWT_SECRET = process.env.JWT_SECRET || "secret";
 
 function checkTokenSetUser(req, res, next) {

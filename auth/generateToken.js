@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const process = require("process");
 
 const generateToken = (data) => {
   return new Promise((resolve, reject) => {

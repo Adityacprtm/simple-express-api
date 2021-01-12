@@ -1,4 +1,6 @@
-function errorHandler(err, req, res, next) {
+const process = require("process");
+
+function errorHandler(err, req, res) {
   if (process.env.PRODUCTION === false) {
     res.status(res.statusCode || 500).json({
       message: err.message,
