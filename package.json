@@ -16,7 +16,7 @@
 		"helmet": "^4.4.1",
 		"joi": "^17.4.0",
 		"jsonwebtoken": "^8.5.1",
-		"monk": "^7.3.2",
+		"monk": "^7.3.3",
 		"morgan": "^1.10.0"
 	},
 	"main": "app.js",
