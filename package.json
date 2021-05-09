@@ -21,7 +21,7 @@
 	},
 	"main": "app.js",
 	"devDependencies": {
-		"eslint": "^7.25.0",
+		"eslint": "^7.26.0",
 		"nodemon": "^2.0.7"
 	},
 	"author": "adityacprtm <pratamaditya7@gmail.com>",
